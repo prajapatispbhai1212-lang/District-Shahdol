@@ -1,0 +1,1213 @@
+
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About District Shahdol | शहडोल जिला</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, "Noto Sans Devanagari", sans-serif;
+    background: #f5f7fa;
+    color: #263746;
+    line-height: 1.7;
+}
+
+:root {
+    --primary: #123c64;
+    --secondary: #e88a24;
+    --light: #edf4fa;
+}
+
+/* TOP BAR */
+.topbar {
+    background: #092b49;
+    color: white;
+    padding: 9px 6%;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+/* HEADER */
+header {
+    background: white;
+    padding: 15px 6%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo-icon {
+    width: 52px;
+    height: 52px;
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 27px;
+}
+
+.logo h2 {
+    color: var(--primary);
+    font-size: 23px;
+}
+
+.logo p {
+    font-size: 12px;
+    color: #777;
+}
+
+nav {
+    display: flex;
+    gap: 19px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    text-decoration: none;
+    color: #183c5b;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 7px 0;
+}
+
+nav a:hover,
+nav a.active {
+    color: var(--secondary);
+    border-bottom: 2px solid var(--secondary);
+}
+
+.menu-btn {
+    display: none;
+    background: var(--primary);
+    color: white;
+    border: none;
+    padding: 8px 13px;
+    border-radius: 5px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+/* HERO */
+.hero {
+    min-height: 400px;
+    background:
+    linear-gradient(90deg, rgba(4,28,47,.88), rgba(4,28,47,.30)),
+    url("https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1600&q=85");
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 65px 8%;
+    color: white;
+}
+
+.hero-content {
+    max-width: 720px;
+}
+
+.hero-label {
+    background: #e88a24;
+    padding: 7px 15px;
+    display: inline-block;
+    border-radius: 30px;
+    font-size: 13px;
+    margin-bottom: 18px;
+}
+
+.hero h1 {
+    font-size: 47px;
+    line-height: 1.25;
+    margin-bottom: 18px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #f0f0f0;
+}
+
+.breadcrumb {
+    margin-top: 25px;
+    font-size: 14px;
+}
+
+.breadcrumb a {
+    color: #ffd18a;
+    text-decoration: none;
+}
+
+/* COMMON SECTION */
+.container {
+    width: 88%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    padding: 65px 0;
+}
+
+.section-heading {
+    text-align: center;
+    margin-bottom: 38px;
+}
+
+.section-heading span {
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    color: var(--primary);
+    font-size: 32px;
+    margin: 7px 0;
+}
+
+.section-heading p {
+    color: #777;
+}
+
+/* INTRO */
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 35px;
+    align-items: center;
+}
+
+.intro-text h2 {
+    color: var(--primary);
+    font-size: 29px;
+    margin-bottom: 17px;
+}
+
+.intro-text p {
+    margin-bottom: 15px;
+    text-align: justify;
+    color: #555;
+}
+
+.intro-image img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px #0002;
+}
+
+/* STATISTICS */
+.statistics {
+    background: var(--primary);
+    color: white;
+    padding: 45px 6%;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 20px;
+    text-align: center;
+}
+
+.stat {
+    border-right: 1px solid #ffffff30;
+}
+
+.stat:last-child {
+    border: none;
+}
+
+.stat h2 {
+    color: #ffbd69;
+    font-size: 32px;
+}
+
+.stat p {
+    font-size: 14px;
+}
+
+/* CARDS */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 24px;
+}
+
+.card {
+    background: white;
+    padding: 27px;
+    border-radius: 12px;
+    box-shadow: 0 4px 18px #0000000c;
+    border-bottom: 3px solid transparent;
+    transition: .3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+    border-bottom-color: var(--secondary);
+    box-shadow: 0 10px 25px #0002;
+}
+
+.card-icon {
+    width: 58px;
+    height: 58px;
+    background: #edf4fa;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    font-size: 30px;
+    margin-bottom: 16px;
+}
+
+.card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+    font-size: 20px;
+}
+
+.card p {
+    color: #666;
+    font-size: 14px;
+}
+
+/* HISTORY */
+.history-section {
+    background: #eaf1f7;
+}
+
+.history-box {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    border-left: 5px solid var(--secondary);
+}
+
+.history-box h3 {
+    color: var(--primary);
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.history-box p {
+    margin-bottom: 14px;
+    color: #555;
+    text-align: justify;
+}
+
+/* CULTURE */
+.culture-banner {
+    background: linear-gradient(90deg,#102f4b,#24618c);
+    padding: 45px;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+}
+
+.culture-banner h2 {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.culture-banner p {
+    max-width: 800px;
+    margin: auto;
+    color: #e4edf5;
+}
+
+/* TOURISM */
+.tourism-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 23px;
+}
+
+.place {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 18px #00000012;
+}
+
+.place img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+}
+
+.place-info {
+    padding: 19px;
+}
+
+.place-info h3 {
+    color: var(--primary);
+    margin-bottom: 7px;
+}
+
+.place-info p {
+    font-size: 14px;
+    color: #666;
+}
+
+/* DISTRICT FACTS */
+.facts {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 3px 18px #0001;
+}
+
+.fact-row {
+    padding: 15px 22px;
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.fact-row:last-child {
+    border: none;
+}
+
+.fact-row strong {
+    color: var(--primary);
+}
+
+/* BUTTON */
+.btn {
+    display: inline-block;
+    padding: 12px 23px;
+    background: var(--secondary);
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: bold;
+    transition: .3s;
+}
+
+.btn:hover {
+    background: #c66a0c;
+}
+
+/* OFFICIAL */
+.official {
+    text-align: center;
+    background: #eaf1f7;
+}
+
+.official p {
+    margin: 15px 0 25px;
+}
+
+/* FOOTER */
+footer {
+    background: #092b49;
+    color: white;
+    padding: 45px 6% 20px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+footer h3 {
+    margin-bottom: 15px;
+    color: #ffc276;
+}
+
+footer p {
+    font-size: 14px;
+    color: #d3dfeb;
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    margin-bottom: 9px;
+}
+
+footer a {
+    text-decoration: none;
+    color: #d3dfeb;
+    font-size: 14px;
+}
+
+footer a:hover {
+    color: #ffc276;
+}
+
+.copyright {
+    text-align: center;
+    border-top: 1px solid #ffffff25;
+    padding-top: 20px;
+    font-size: 13px;
+}
+
+/* BACK TO TOP */
+.top-button {
+    position: fixed;
+    bottom: 22px;
+    right: 22px;
+    width: 43px;
+    height: 43px;
+    border: none;
+    background: var(--secondary);
+    color: white;
+    border-radius: 50%;
+    font-size: 23px;
+    cursor: pointer;
+    display: none;
+}
+
+/* MOBILE */
+@media(max-width:900px) {
+    .intro-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cards,
+    .tourism-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .statistics {
+        grid-template-columns: repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px) {
+    header {
+        padding: 14px 5%;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 5px;
+    }
+
+    nav.show {
+        display: flex;
+    }
+
+    nav a {
+        width: 100%;
+        padding: 9px 0;
+        border-bottom: 1px solid #eee;
+    }
+
+    .hero {
+        min-height: 330px;
+        padding: 45px 6%;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .section {
+        padding: 45px 0;
+    }
+
+    .section-heading h2 {
+        font-size: 26px;
+    }
+
+    .cards,
+    .tourism-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .statistics {
+        grid-template-columns: repeat(2,1fr);
+        gap: 25px 10px;
+    }
+
+    .stat {
+        border: none;
+    }
+
+    .intro-image img {
+        height: 240px;
+    }
+
+    .culture-banner {
+        padding: 30px 20px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fact-row {
+        font-size: 13px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+    <span>🇮🇳 मध्य प्रदेश शासन | Government of Madhya Pradesh</span>
+    <span>जिला शहडोल - मध्य प्रदेश</span>
+</div>
+
+<!-- HEADER -->
+<header>
+
+    <div class="logo">
+        <div class="logo-icon">🏛️</div>
+        <div>
+            <h2>जिला शहडोल</h2>
+            <p>District Shahdol | Madhya Pradesh</p>
+        </div>
+    </div>
+
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    <nav id="navbar">
+        <a href="index.html">Home</a>
+        <a href="about.html" class="active">About District</a>
+        <a href="tourism.html">Tourism</a>
+        <a href="agriculture.html">Agriculture</a>
+        <a href="culture.html">Culture</a>
+        <a href="contact.html">Contact</a>
+    </nav>
+
+</header>
+
+<!-- HERO -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <span class="hero-label">ABOUT SHAHDOL DISTRICT</span>
+
+        <h1>शहडोल जिले के बारे में</h1>
+
+        <p>
+            प्राकृतिक सुंदरता, समृद्ध इतिहास, जनजातीय संस्कृति
+            और ऐतिहासिक विरासत की अनोखी पहचान।
+        </p>
+
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            / About District
+        </div>
+
+    </div>
+
+</section>
+
+<!-- INTRODUCTION -->
+<section class="section">
+
+    <div class="container intro-grid">
+
+        <div class="intro-text">
+
+            <h2>शहडोल जिले का परिचय</h2>
+
+            <p>
+                शहडोल मध्य प्रदेश के उत्तर-पूर्वी भाग में स्थित
+                एक महत्वपूर्ण जिला है। जिले का मुख्यालय
+                शहडोल नगर है।
+            </p>
+
+            <p>
+                शहडोल अपनी प्राकृतिक सुंदरता, पहाड़ियों,
+                जंगलों, खनिज संपदा और जनजातीय संस्कृति
+                के लिए जाना जाता है।
+            </p>
+
+            <p>
+                यहाँ की अर्थव्यवस्था में कृषि, कोयला खनन,
+                व्यापार और अन्य स्थानीय गतिविधियों का
+                महत्वपूर्ण योगदान है।
+            </p>
+
+            <p>
+                शहडोल जिले में हिंदी और बघेली सहित
+                विभिन्न स्थानीय भाषाएँ और बोलियाँ प्रचलित हैं।
+            </p>
+
+            <a href="https://shahdol.nic.in/"
+               target="_blank" class="btn">
+               और जानकारी प्राप्त करें →
+            </a>
+
+        </div>
+
+        <div class="intro-image">
+            <img
+            src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=1000&q=85"
+            alt="शहडोल की प्राकृतिक सुंदरता">
+        </div>
+
+    </div>
+
+</section>
+
+<!-- STATISTICS -->
+<section class="statistics">
+
+    <div class="stat">
+        <h2>5,610</h2>
+        <p>क्षेत्रफल (वर्ग किलोमीटर)</p>
+    </div>
+
+    <div class="stat">
+        <h2>10,66,063</h2>
+        <p>जनसंख्या (2011)</p>
+    </div>
+
+    <div class="stat">
+        <h2>886</h2>
+        <p>गाँव</p>
+    </div>
+
+    <div class="stat">
+        <h2>391</h2>
+        <p>ग्राम पंचायत (2011 के आँकड़े)</p>
+    </div>
+
+</section>
+
+<!-- GEOGRAPHY -->
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>GEOGRAPHY</span>
+            <h2>शहडोल की भौगोलिक स्थिति</h2>
+            <p>Geographical Features of Shahdol</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">📍</div>
+                <h3>भौगोलिक स्थान</h3>
+                <p>
+                    शहडोल मध्य प्रदेश के उत्तर-पूर्वी भाग में
+                    स्थित है। यह रीवा संभाग का हिस्सा है।
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⛰️</div>
+                <h3>पहाड़ियाँ और पठार</h3>
+                <p>
+                    जिले में मैकल पर्वतमाला, पहाड़ी क्षेत्र,
+                    पठार और सोन घाटी के भू-भाग मिलते हैं।
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🌳</div>
+                <h3>वन संपदा</h3>
+                <p>
+                    जिले में साल और मिश्रित वन पाए जाते हैं।
+                    यहाँ की हरियाली प्राकृतिक सुंदरता बढ़ाती है।
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- HISTORY -->
+<section class="section history-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>HISTORY</span>
+            <h2>शहडोल का गौरवशाली इतिहास</h2>
+            <p>Historical Background of Shahdol</p>
+        </div>
+
+        <div class="history-box">
+
+            <h3>शहडोल नाम की उत्पत्ति</h3>
+
+            <p>
+                स्थानीय जानकारी के अनुसार शहडोल का नाम
+                सोहागपुर गाँव के शाहडोलवा अहीर के नाम पर
+                पड़ा माना जाता है।
+            </p>
+
+            <p>
+                इस क्षेत्र का इतिहास बघेल राजवंश,
+                कलचुरी शासन और रीवा रियासत से जुड़ा रहा है।
+                यहाँ अनेक प्राचीन भवनों, मंदिरों और पुरातात्विक
+                अवशेषों के प्रमाण मिलते हैं।
+            </p>
+
+            <p>
+                वर्ष 1948 में रियासतों के विलय के बाद
+                जिला मुख्यालय उमरिया से शहडोल स्थानांतरित
+                किया गया था।
+            </p>
+
+            <p>
+                शहडोल का इतिहास इसकी सांस्कृतिक पहचान,
+                ऐतिहासिक विरासत और क्षेत्रीय परंपराओं को
+                दर्शाता है।
+            </p>
+
+            <a href="https://shahdol.nic.in/en/history/"
+               target="_blank" class="btn">
+               आधिकारिक इतिहास पढ़ें →
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CULTURE -->
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>CULTURE & TRADITION</span>
+            <h2>संस्कृति एवं परंपराएँ</h2>
+            <p>Culture of Shahdol</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🎭</div>
+                <h3>जनजातीय संस्कृति</h3>
+                <p>
+                    गोंड, बैगा और अन्य जनजातीय समुदायों
+                    की परंपराएँ जिले की सांस्कृतिक
+                    पहचान का महत्वपूर्ण हिस्सा हैं।
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">💃</div>
+                <h3>लोक नृत्य एवं संगीत</h3>
+                <p>
+                    स्थानीय लोकगीत, पारंपरिक नृत्य
+                    और संगीत यहाँ की समृद्ध
+                    सांस्कृतिक विरासत हैं।
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🎉</div>
+                <h3>त्योहार एवं मेले</h3>
+                <p>
+                    होली, दीपावली, दशहरा तथा
+                    स्थानीय धार्मिक और पारंपरिक
+                    आयोजन उत्साह से मनाए जाते हैं।
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- CULTURE BANNER -->
+<section class="section">
+
+    <div class="container">
+
+        <div class="culture-banner">
+
+            <h2>शहडोल - संस्कृति का शहर</h2>
+
+            <p>
+                शहडोल की पहचान यहाँ की जनजातीय परंपराओं,
+                प्राकृतिक सुंदरता, लोक संस्कृति और
+                ऐतिहासिक विरासत से बनी है।
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ECONOMY -->
+<section class="section history-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>ECONOMY & DEVELOPMENT</span>
+            <h2>अर्थव्यवस्था एवं विकास</h2>
+            <p>Economic Activities of Shahdol</p>
+        </div>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="card-icon">🌾</div>
+                <h3>कृषि</h3>
+                <p>
+                    ग्रामीण क्षेत्रों में कृषि लोगों की
+                    आजीविका का प्रमुख आधार है।
+                    धान, गेहूँ और अन्य फसलें उगाई जाती हैं।
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">⛏️</div>
+                <h3>खनिज एवं उद्योग</h3>
+                <p>
+                    शहडोल क्षेत्र कोयला और अन्य
+                    खनिज संसाधनों के लिए महत्वपूर्ण है।
+                    खनन गतिविधियाँ अर्थव्यवस्था में योगदान देती हैं।
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🏫</div>
+                <h3>शिक्षा एवं स्वास्थ्य</h3>
+                <p>
+                    जिले में विद्यालय, महाविद्यालय,
+                    अस्पताल और स्वास्थ्य केंद्र
+                    नागरिकों को सुविधाएँ प्रदान करते हैं।
+                </p>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- TOURISM -->
+<section class="section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>TOURISM</span>
+            <h2>शहडोल के प्रमुख पर्यटन स्थल</h2>
+            <p>Explore the beauty of Shahdol</p>
+        </div>
+
+        <div class="tourism-grid">
+
+            <div class="place">
+                <img
+                src="https://images.unsplash.com/photo-1605649487212-47bdab064df7?auto=format&fit=crop&w=800&q=80"
+                alt="Temple">
+                <div class="place-info">
+                    <h3>बूढ़ी माता मंदिर</h3>
+                    <p>
+                        शहडोल का प्रसिद्ध धार्मिक स्थल,
+                        जहाँ श्रद्धालु दर्शन के लिए आते हैं।
+                    </p>
+                </div>
+            </div>
+
+            <div class="place">
+                <img
+                src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=800&q=80"
+                alt="Nature">
+                <div class="place-info">
+                    <h3>सारसी आइलैंड रिज़ॉर्ट</h3>
+                    <p>
+                        प्राकृतिक वातावरण और पर्यटन
+                        के लिए प्रसिद्ध आकर्षण।
+                    </p>
+                </div>
+            </div>
+
+            <div class="place">
+                <img
+                src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=80"
+                alt="Forest">
+                <div class="place-info">
+                    <h3>घाटी डोंगरी</h3>
+                    <p>
+                        हरियाली और प्राकृतिक सुंदरता
+                        से जुड़ा आकर्षक स्थान।
+                    </p>
+                </div>
+            </div>
+
+            <div class="place">
+                <img
+                src="https://images.unsplash.com/photo-1548013146-72479768bada?auto=format&fit=crop&w=800&q=80"
+                alt="Temple">
+                <div class="place-info">
+                    <h3>पचमठा मंदिर</h3>
+                    <p>
+                        स्थानीय धार्मिक और सांस्कृतिक
+                        पहचान से जुड़ा मंदिर।
+                    </p>
+                </div>
+            </div>
+
+            <div class="place">
+                <img
+                src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=800&q=80"
+                alt="Forest">
+                <div class="place-info">
+                    <h3>प्राकृतिक वन क्षेत्र</h3>
+                    <p>
+                        जिले के जंगल और हरियाली
+                        प्रकृति प्रेमियों को आकर्षित करते हैं।
+                    </p>
+                </div>
+            </div>
+
+            <div class="place">
+                <img
+                src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
+                alt="Caves">
+                <div class="place-info">
+                    <h3>लाखबारिया गुफाएँ</h3>
+                    <p>
+                        जिले की आधिकारिक पर्यटन
+                        गैलरी में शामिल एक दर्शनीय स्थल।
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div style="text-align:center;margin-top:35px;">
+            <a href="https://shahdol.nic.in/en/tourist-places/"
+               target="_blank" class="btn">
+               सभी पर्यटन स्थल देखें →
+            </a>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- DISTRICT FACTS -->
+<section class="section history-section">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>QUICK INFORMATION</span>
+            <h2>शहडोल जिला एक नजर में</h2>
+            <p>Important District Information</p>
+        </div>
+
+        <div class="facts">
+
+            <div class="fact-row">
+                <strong>जिले का नाम</strong>
+                <span>शहडोल</span>
+            </div>
+
+            <div class="fact-row">
+                <strong>राज्य</strong>
+                <span>मध्य प्रदेश</span>
+            </div>
+
+            <div class="fact-row">
+                <strong>संभाग</strong>
+                <span>शहडोल संभाग</span>
+            </div>
+
+            <div class="fact-row">
+                <strong>जिला मुख्यालय</strong>
+                <span>शहडोल</span>
+            </div>
+
+            <div class="fact-row">
+                <strong>क्षेत्रफल</strong>
+                <span>5,610 वर्ग किलोमीटर</span>
+            </div>
+
+            <div class="fact-row">
+                <strong>जनसंख्या</strong>
+                <span>10,66,063 (2011)</span>
+            </div>
+
+            <div class="fact-row">
+                <strong>गाँव</strong>
+                <span>886</span>
+            </div>
+
+            <div class="fact-row">
+                <strong>प्रमुख भाषाएँ</strong>
+                <span>हिंदी, बघेली, उर्दू</span>
+            </div>
+
+        </div>
+
+        <p style="text-align:center;font-size:12px;color:#777;margin-top:12px;">
+            स्रोत: जिला शहडोल की आधिकारिक वेबसाइट।
+            जनसंख्या के आँकड़े 2011 की जनगणना के हैं।
+        </p>
+
+    </div>
+
+</section>
+
+<!-- OFFICIAL WEBSITE -->
+<section class="section official">
+
+    <div class="container">
+
+        <div class="section-heading">
+            <span>OFFICIAL INFORMATION</span>
+            <h2>शहडोल की आधिकारिक वेबसाइट</h2>
+        </div>
+
+        <p>
+            जिले की सरकारी योजनाओं, विभागों, समाचारों,
+            पर्यटन और अन्य सेवाओं की जानकारी प्राप्त करें।
+        </p>
+
+        <a href="https://shahdol.nic.in/"
+           target="_blank" class="btn">
+           Official Website खोलें →
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+            <h3>🏛️ जिला शहडोल</h3>
+            <p>
+                शहडोल जिले की संस्कृति, इतिहास,
+                पर्यटन, कृषि और विकास की जानकारी
+                उपलब्ध कराने वाला सूचना पोर्टल।
+            </p>
+        </div>
+
+        <div>
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About District</a></li>
+                <li><a href="tourism.html">Tourism</a></li>
+                <li><a href="agriculture.html">Agriculture</a></li>
+            </ul>
+        </div>
+
+        <div>
+            <h3>Important Links</h3>
+            <ul>
+                <li>
+                    <a href="https://shahdol.nic.in/" target="_blank">
+                    Official Website
+                    </a>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="culture.html">Culture</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © 2026 District Shahdol Information Portal.
+        All Rights Reserved.
+    </div>
+
+</footer>
+
+<button class="top-button" id="topButton"
+onclick="goToTop()">↑</button>
+
+<script>
+
+// MOBILE MENU
+function toggleMenu() {
+    document.getElementById("navbar").classList.toggle("show");
+}
+
+// CLOSE MENU AFTER CLICK
+document.querySelectorAll("#navbar a").forEach(function(link) {
+    link.addEventListener("click", function() {
+        document.getElementById("navbar").classList.remove("show");
+    });
+});
+
+// BACK TO TOP
+const topButton = document.getElementById("topButton");A
+
+window.addEventListener("scroll", function() {
+    if (window.scrollY > 300) {
+        topButton.style.display = "block";
+    } else {
+        topButton.style.display = "none";
+    }
+});
+
+function goToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
+}
+
+</script>
+
+</body>
+</html>
